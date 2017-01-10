@@ -1,0 +1,15 @@
+function SearchFilter($query) {
+if ($query->is_search) {
+  $meta_query = array(
+'relation' => 'OR',
+array(
+'key'	=> '_stock_status',
+'compare'	=> 'NOT IN',
+'value'	=> 'outofstock',
+)
+);
+$query->set('meta_query', $meta_query);
+}
+return $query;
+}
+add_filter('pre_get_posts','SearchFilter');
