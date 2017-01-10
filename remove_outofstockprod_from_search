@@ -1,4 +1,4 @@
-/** Remove out of stock products from Woocommerce search query */
+/** Remove out of stock products from Woocommerce search query by Bjorn*/
 function SearchFilter($query) {
 if ($query->is_search) {
   $meta_query = array(
